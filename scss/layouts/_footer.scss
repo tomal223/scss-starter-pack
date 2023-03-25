@@ -1,0 +1,85 @@
+/*=============== #StartRegion <<< [Footer Section] =====================*/
+.footer { 
+    padding: 70px 0;
+    color: $white;
+    .footer__content {
+        max-width: 310px;
+        .footer__logo {
+            max-width: 199px;
+            margin-bottom: 24px;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 14px;
+            line-height: 1.4;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .footer__item {
+        padding-top: 14px;
+        h4 {
+            font-size: 24px;
+            font-weight: 700;
+            color: $white;
+            margin-bottom: 10px;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            padding-top: 10px;
+            a {
+                display: block;
+                margin-bottom: 10px;
+                padding-top: 2px;
+                font-size: 16px;
+                color: $white; 
+                transition: 0.3s;
+                letter-spacing: .2px;
+                line-height: 1.3;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+    }
+    .footer__bottom {
+        padding-top: 52px;
+        .copyright {
+            font-size: 14px;
+            margin-bottom: 0px;
+            display: block;
+        }
+    }
+}
+@media only screen and (max-width: 991px) {
+    .footer .footer__logo__wrapper p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .footer .footer__item ul a {
+        font-size: 13px;
+    }
+    .footer .footer__logo {
+        max-width: 137px;
+        margin-bottom: 13px;
+    }
+
+    .footer {
+        padding-bottom: 22px;
+        padding-top: 65px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .col-md-4.order-md-0 {
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 575px) {
+}
+
+/*=============== #EndRegion <<< [Home Section] =====================*/

@@ -1,0 +1,272 @@
+/*=============== #StartRegion <<< [Header Section] =====================*/
+
+.header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 14px #00000052;
+    padding: 30px 20px;
+    transition: 0.3s;
+    z-index: 9;
+    .header__logo img {
+        max-width: 343px;
+    }
+    .header__navigation ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        grid-gap: 6px;
+        li {
+            a {
+                color: $dark;
+                transition: 0.3s;
+                font-size: 18px;
+                text-transform: uppercase;
+                margin-right: 35px;
+                &:hover,
+                &.active {
+                    color: $theme-color;
+                }
+            }
+            &:last-child a {
+                margin-right: 0;
+            }
+        }
+    }
+    .header__right {
+        .header__social {
+            a {
+                opacity: 0.5;
+                transition: 0.2s;
+                margin-left: 9px;
+                img {
+                    width: 28px;
+                }
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            border-left: 1px solid $border-color;
+            padding: 11px 0;
+            padding-left: 10px;
+            margin-left: 20px;
+        }
+        .language__btns a {
+            font-size: 18px;
+            margin-left: 15px;
+            transition: 0.3s;
+            &:hover {
+                color: $theme-color;
+            }
+            &.active {
+                color: $theme-color;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.offcanvas-area {
+    position: fixed;
+    right: -100%;
+    height: 100%;
+    width: 300px;
+    background: #f5fcff;
+    z-index: 92;
+    padding-top: 35px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    visibility: hidden;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 50px;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .menu-close {
+        font-size: 22px;
+        color: $text-dark;
+        position: absolute;
+        top: 9px;
+        left: 17px;
+        cursor: pointer;
+        transition: 0.4s;
+        max-width: 19px;
+        opacity: 0.5;
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    .main-menu {
+        ul {
+            li {
+                border-bottom: 1px solid #ddd;
+                padding: 10px 0;
+                &:first-child {
+                    border-top: 1px solid #ddd;
+                }
+                a {
+                    font-size: 17px;
+                    color: $text-dark;
+                    margin-left: 26px;
+                    margin-bottom: 0;
+                    display: block;
+                    transition: 0.3s;
+                    font-weight: 600;
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    &.active {
+        right: 0;
+        visibility: visible;
+    }
+}
+
+.offcanvas-menu {
+    .main-menu {
+        ul {
+            display: block;
+            padding-top: 80px;
+            padding-left: 0;
+            margin-bottom: 45px;
+        }
+    }
+    .common-btn {
+        font-size: 17px;
+        padding: 9px 30px;
+        border-radius: 12px;
+    }
+}
+.offcanvas-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    z-index: 91;
+    &.active {
+        opacity: 0.4;
+        visibility: visible;
+    }
+}
+.menu-open {
+    display: none;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    margin-left: 0px;
+    margin-right: 45px;
+    transition: 0.3s;
+    max-width: 30px;
+    opacity: 0.5;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+// Responsive Code Starts
+
+@media only screen and (max-width: 1200px) {
+    .header {
+        padding: 16px 0;
+    }
+    .header .header__navigation ul li a {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .header .header__navigation ul li a:not(.heart-btn) {
+        display: none !important;
+    }
+
+    .offcanvas-menu .d-sm-none {
+        padding: 0 19px;
+    }
+    .offcanvas-menu .header__link {
+        display: block;
+        margin-bottom: 9px;
+        transition: 0.3s;
+    }
+    .header {
+        padding: 15px 0;
+    }
+    .menu-open {
+        display: block;
+    }
+    .header__navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header .header__top .dropdown-toggle img {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header .header__top .header__link {
+        font-size: 13px;
+    }
+    .header .header__logo a {
+        font-size: 38px;
+        margin-bottom: 0px;
+    }
+
+    .header .ml-2 {
+        margin-left: 5px !important;
+        line-height: 2;
+    }
+    .header.position-absolute {
+        top: 25px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .header .header__top {
+        display: none;
+    }
+    .header .header__top .header__link {
+        font-size: 13px;
+        word-break: break-word;
+    }
+    .header .header__top .dropdown-toggle img {
+        margin-right: 1px;
+        margin-left: 1px;
+        max-width: 17px;
+    }
+    .header .header__top .dropdown-toggle {
+        font-size: 13px;
+    }
+    .menu-open {
+        max-width: 28px;
+    }
+
+    .header .header__logo a {
+        font-size: 35px;
+    }
+    .header .header__logo p {
+        font-size: 11px;
+    }
+    .header .ml-2 {
+        margin-left: 0px !important;
+    }
+}
+
+/*=============== #EndRegion <<< [Header Section] =====================*/
